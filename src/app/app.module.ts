@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from "@angular/router";
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './componebts/home/home.component';
 import { SearchComponent } from './componebts/search/search.component';
 import { ArtistaComponent } from './componebts/artista/artista.component';
 import { NavbarComponent } from './componebts/shared/navbar/navbar.component';
+import { ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { NavbarComponent } from './componebts/shared/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(ROUTES, {useHash:true}),
   ],
   providers: [],
   bootstrap: [AppComponent]
